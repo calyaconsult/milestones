@@ -1,0 +1,224 @@
+
+  /* ==========================================================
+     DEFAULTS: used before (or without) JavaScript.
+     Color schemes are defined in the THEMES list in the script
+     below; they override these variables at runtime.
+     ========================================================== */
+  :root {
+    --bg: #131314;
+    --title: #e8eaed;
+    --body: #c9cccf;
+    --date: #9aa0a6;
+    --marker: #e8eaed;
+    --line: #6b7075;
+
+    --marker-size: 1.15rem;
+    --marker-top: 0.2rem;
+    --item-gap: 1.75rem;
+    --indent: 3rem;
+    --max-width: 680px;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    margin: 0;
+    background: var(--bg);
+  }
+
+  body {
+    color: var(--body);
+    font-family: "Google Sans", "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    padding: 2rem 1.25rem;
+  }
+
+  .page-title {
+    max-width: var(--max-width);
+    margin: 0 auto 1.5rem;
+    color: var(--title);
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    line-height: 1.25;
+  }
+
+  /* Smooth color changes when switching themes */
+  @media (prefers-reduced-motion: no-preference) {
+    html,
+    body,
+    .timeline-item::before,
+    .timeline-title,
+    .timeline-date,
+    .timeline-text {
+      transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    }
+  }
+
+  /* ---------- Theme switcher ---------- */
+
+  .theme-switcher {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 0.7rem;
+    max-width: var(--max-width);
+    margin: 0 auto 2rem;
+  }
+
+  .theme-switcher[hidden] {
+    display: none;
+  }
+
+  .theme-swatch {
+    width: 1.5rem;
+    height: 1.5rem;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--swatch-bg) 50%, var(--swatch-accent) 50%);
+    cursor: pointer;
+  }
+
+  .theme-swatch:hover {
+    transform: scale(1.1);
+  }
+
+  .theme-swatch[aria-pressed="true"],
+  .theme-swatch:focus-visible {
+    outline: 2px solid var(--marker);
+    outline-offset: 2px;
+  }
+
+  /* ---------- Timeline ---------- */
+
+  .timeline {
+    list-style: none;
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 0 var(--item-gap) var(--indent);
+  }
+
+  /* Hollow circle marker */
+  .timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: var(--marker-top);
+    width: var(--marker-size);
+    height: var(--marker-size);
+    border: 2px solid var(--marker);
+    border-radius: 50%;
+    background: var(--bg);
+    z-index: 1;
+  }
+
+  /* Dotted connector down to the next marker */
+  .timeline-item::after {
+    content: "";
+    position: absolute;
+    left: calc(var(--marker-size) / 2 - 0.5px);
+    top: calc(var(--marker-top) + var(--marker-size) + 0.25rem);
+    bottom: calc(var(--marker-top) * -1 + 0.25rem);
+    border-left: 1px dotted var(--line);
+  }
+
+  .timeline-item:last-child {
+    padding-bottom: 0;
+  }
+
+  .timeline-item:last-child::after {
+    display: none;
+  }
+
+  /* ---------- Content ---------- */
+
+  .timeline-title {
+    margin: 0;
+    color: var(--title);
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.3;
+  }
+
+  .timeline-date {
+    display: block;
+    margin: 0.35rem 0 0.4rem;
+    color: var(--date);
+    font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Courier New", monospace;
+    font-size: 0.8rem;
+    font-style: italic;
+    font-weight: 600;
+  }
+
+  .timeline-text {
+    margin: 0;
+    color: var(--body);
+  }
+
+  /* ---------- Past vs. future ---------- */
+
+  /* Past: marker fills in solid and the entry fades back a little. */
+  .timeline-item.is-past::before {
+    background: var(--marker);
+  }
+
+  .timeline-item.is-past .timeline-title,
+  .timeline-item.is-past .timeline-date,
+  .timeline-item.is-past .timeline-text {
+    opacity: 0.5;
+  }
+
+  .timeline-item.is-past .timeline-title {
+    text-decoration: line-through;
+    text-decoration-color: var(--line);
+    text-decoration-thickness: 1px;
+  }
+
+  /* The connector below a past item turns solid. */
+  .timeline-item.is-past::after {
+    border-left-style: solid;
+  }
+
+  /* Today: accent-colored ring, slightly larger, with a small badge. */
+  .timeline-item.is-today::before {
+    border-color: var(--date);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--date) 25%, transparent);
+  }
+
+  .timeline-item.is-today .timeline-title {
+    color: var(--date);
+  }
+
+  .timeline-item.is-today .timeline-date::after {
+    content: "Heute";
+    display: inline-block;
+    margin-left: 0.5rem;
+    padding: 0.05rem 0.45rem;
+    border-radius: 1rem;
+    background: var(--date);
+    color: var(--bg);
+    font-style: normal;
+    font-size: 0.7rem;
+    vertical-align: middle;
+  }
+
+  /* ---------- Small screens ---------- */
+
+  @media (max-width: 480px) {
+    body {
+      padding: 1.25rem 1rem;
+    }
+
+    :root {
+      --indent: 2.5rem;
+    }
+  }

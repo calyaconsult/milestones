@@ -1,0 +1,98 @@
+{
+  "cms_payload": {
+    "page_title": "Meilensteine auf dem Weg nach 2027",
+    "slug": "meilensteine-weihnachtssaison-2027",
+    "seo_metadata": {
+      "meta_title": "Meilensteine zur Weihnachtssaison 2026/2027",
+      "meta_description": "Von Black Friday bis Heiligabend: Alle wichtigen Meilensteine der Weihnachtssaison 2026 im Überblick – ideal für Ihre Geschäftsplanung.",
+      "og_title": "Meilensteine auf dem Weg nach 2027 – Weihnachtssaison im Überblick",
+      "og_description": "Die wichtigsten Termine der Weihnachtssaison 2026: Black Friday, Advent, St. Nikolaus, Heiligabend und Silvester – jetzt planen und vorbereiten."
+    },
+    "content_summary": "Die Seite listet die wichtigsten Meilensteine der Weihnachts- und Vorweihnachtssaison von September 2026 bis Januar 2027. Sie richtet sich an Unternehmen, die ihr umsatzstärkstes Quartal strategisch planen möchten. Schlüsseldaten wie Black Friday, der erste Advent, St. Nikolaus und Heiligabend werden mit kurzen Handlungshinweisen versehen.",
+    "schema_org_json_ld": {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Meilensteine auf dem Weg nach 2027",
+      "url": "https://staging.calyaconsult.ch/weihnachten/milestones/index.html",
+      "description": "Übersicht der wichtigsten Meilensteine der Weihnachtssaison 2026/2027 für Unternehmen – von der Vorbereitungsphase im September bis zum Jahreswechsel.",
+      "inLanguage": "de",
+      "about": {
+        "@type": "Thing",
+        "name": "Weihnachtssaison 2026/2027",
+        "description": "Wichtige Termine und Meilensteine für Unternehmen während der Weihnachts- und Vorweihnachtssaison 2026."
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "name": "Meilensteine der Weihnachtssaison 2026/2027",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "23. September – Beginn der Weihnachtsvorbereitung",
+            "description": "Wer noch nicht mit der Vorbereitung auf die Weihnachtssaison begonnen hat, muss es spätestens jetzt tun."
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "1. Oktober – Start des letzten Quartals",
+            "description": "Das letzte Quartal des Jahres beginnt. Für viele Firmen ist es das umsatzstärkste."
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "1. Oktober – Halloween",
+            "description": "Ab hier befinden wir uns in der Hauptphase des vorweihnachtlichen Geschäfts."
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "11. November – 6 Wochen bis Weihnachten",
+            "description": "Bis Weihnachten bleiben 6 Wochen, bis Neujahr 7."
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "27. November – Black Friday",
+            "description": "Der grosse Shopping-Tag mit Aktionen und Sonderangeboten."
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "30. November – 1. Advent",
+            "description": "Am Folgetag wird das erste Türchen des Adventskalenders geöffnet. Die heisse Endphase beginnt."
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "6. Dezember – St. Nikolaus",
+            "description": "Vor allem für Bäckereien, Konditoreien und Lebensmittelgeschäfte sehr umsatzstark."
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "21. Dezember – Vierter Adventssonntag & Wintersonnwende",
+            "description": "Der dunkelste Tag des Jahres. In drei Tagen beginnt das Fest des wiederkehrenden Lichts."
+          },
+          {
+            "@type": "ListItem",
+            "position": 9,
+            "name": "24. Dezember – Heiligabend",
+            "description": "Es ist geschafft. Feiern Sie fröhlich und geniessen Sie die letzten Tage des Jahres."
+          },
+          {
+            "@type": "ListItem",
+            "position": 10,
+            "name": "31. Dezember – Silvester",
+            "description": "Das Jahr 2026 endet."
+          },
+          {
+            "@type": "ListItem",
+            "position": 11,
+            "name": "1. Januar – Neujahr 2027",
+            "description": "Wir begrüssen das Jahr 2027. Möge es ein glückliches werden."
+          }
+        ]
+      }
+    }
+  }
+}
